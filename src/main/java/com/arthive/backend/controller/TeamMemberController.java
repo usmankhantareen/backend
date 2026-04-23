@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/team-members")
-@CrossOrigin(origins = "*")
 public class TeamMemberController {
 
     private final TeamMemberService teamMemberService;
@@ -16,6 +15,7 @@ public class TeamMemberController {
     public TeamMemberController(TeamMemberService teamMemberService) {
         this.teamMemberService = teamMemberService;
     }
+
     @GetMapping
     public List<TeamMember> getAllTeamMembers() {
         return teamMemberService.getAllTeamMembers();

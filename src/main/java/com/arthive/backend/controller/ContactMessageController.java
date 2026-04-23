@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact-messages")
-@CrossOrigin(origins = "*")
 public class ContactMessageController {
     private final ContactMessageService contactMessageService;
 
@@ -42,6 +41,7 @@ public class ContactMessageController {
                                        @Valid @RequestBody ContactStatusUpdateRequest request) {
         return contactMessageService.updateStatus(id, request.status());
     }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {

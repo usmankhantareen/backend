@@ -6,9 +6,9 @@ import com.arthive.backend.service.HomeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/api/home")
-@CrossOrigin(origins = "*")
 public class HomeController {
 
     private final HomeService homeService;
@@ -21,6 +21,7 @@ public class HomeController {
     public List<Artwork> getFeaturedArtworks() {
         return homeService.getFeaturedArtworks();
     }
+
     @GetMapping("/stats")
     public HomeStatsResponse getStats() {
         return homeService.getStats();
